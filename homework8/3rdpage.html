@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>Contact Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+
+
+
+
+            function checkboxes() {
+                var firstName = document.getElementById("fname").value;
+                if (firstName == "") {
+                    document.getElementById("fname").focus();
+
+
+                    document.getElementById("fname").Style.backgroundColor = "red";
+                    document.getElementById("fnameMessage").innerHTML = "* Required";
+                    document.getElementById("fnameMessage").style.color = "red"
+                    return false;
+
+
+                }
+                else {
+                    document.getElementById("fname").style.backgroundColor = "white";
+                }
+                var lastname = document.getElementById("lname").value;
+                if (lname == "") {
+                    document.getElementById("lname").style.backgroundColor = "red";
+                    document.getElementById("lname").focus();
+                } else {
+                    document.getElementById("lname").style.backgroundColor = "white";
+                } var email = document.getElementById("email").value;
+                if (email == "") {
+                    document.getElementById("email").style.backgroundColor = "red";
+                    document.getElementById("email").focus();
+                } else { document.getElementById("email").style.backgroundColor = "white"; }
+        </script>
+</head>
+
+
+
+<body>
+    <h1>Contact Me!</h1>
+    <br />
+    <form action="3rdpage.html" type="Post">
+        First Name: <input type="text" id="fname"><br>
+        Last Name: <input type="text" id="lname"><br>
+        Email: <input type="text" id="email"><br>
+        <br>
+        <br>
+        <div>Agree to Terms?</div>
+        <input type="radio" name="yes" value="yes">YES<br>
+        <input type="radio" name="no" value="no">NO<br />
+        <br><button id="btnSubmit" onclick='checkboxes(); emails(); Check();'>Submit</button>
+        <a href="2ndpage.html">Go To 2nd Page</a>
+        <a href="Shawn.html">Go To Shawn Page</a>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</h1>
+</body>
+
+</html>
