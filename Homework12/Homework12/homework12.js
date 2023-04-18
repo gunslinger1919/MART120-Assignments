@@ -50,21 +50,6 @@ function draw() {
   textSize(20);
   text("exit", width - 50, height - 50);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   circle(x, y, diameter)
 
   if (keyIsDown(s)) {
