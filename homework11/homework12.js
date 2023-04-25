@@ -7,24 +7,31 @@ var s = 83;
 var a = 65;
 var d = 68;
 
-var shape1x = 10;
+var shape1x = [];
 
-var shape1y = 10;
+var shape1y = [];
 
-var shape1diameter = 70;
+var shape1diameter = [];
 
-var shape1XSpeed;
-var shape2YSpeed;
+var shape1XSpeed = [];
+var shape2YSpeed = [];
 
 var mousex = 10;
 var mousey = 10;
 
 function setup() {
   createCanvas(800, 600);
-
-  shape1xSpeed = Math.floor(Math.random() * Math.floor(Math.random() * 5) + 1);
-  shape1ySpeed = Math.floor(Math.random() * Math.floor(Math.random() * 5) + 1);
+  //random speeds
+  for (var i = 0; i < 5; i++) {
+    shape1XSpeed[i] = Math.floor(Math.random() * Math.floor(Math.random() * 5) + 1);
+    shape2YSpeed[i] = Math.floor(Math.random() * Math.floor(Math.random() * 5) + 1);
+    shape1x[i] = getRandomNumber(200);
+    shape1y[i] = getRandomNumber(600);
+    shape1diameter[i] = getRandomNumber(75);
+  }
 }
+
+
 function draw() {
   background(0);
   fill(12, 30, 115);
@@ -42,9 +49,9 @@ function draw() {
 
   mouseClicked();
 
-// You win
+  // You win
 
- youWin();
+  youWin();
 
 
   //character limits
@@ -56,17 +63,17 @@ function draw() {
 
 
 
-  
-
-  
-  
 
 
 
 
- 
 
-  circle(mousex, mousey, 10);
+
+
+
+
+
+
 }
 
 function createBorders(thickness) {
@@ -121,33 +128,42 @@ function createCharacterLimits() {
     y = height;
   }
 
-  
+
 
 
 }
 function createEnemy() {
   fill(30, 100, 20);
   //make shape
-  circle(shape1x, shape1y, shape1diameter);
+  for (var i = 0; i < shape1x.length; i++) {
+    circle(shape1x[i], shape1y[i], shape1diameter[i]);
 
-  shape1x += shape1xSpeed;
-  shape1y += shape1ySpeed;
+    shape1XSpeed[i] = Math.floor(Math.random() * Math.floor(Math.random() * 5) + 1);
+    shape2YSpeed[i] = Math.floor(Math.random() * Math.floor(Math.random() * 5) + 1);
 
-  if (shape1y >= 600) {
-    shape1y = 10;
-  } else if (shape1x >= 800) {
-    shape1x = 10;
+    shape1x[i] += shape1XSpeed[i];
+    shape1y[i] += shape2YSpeed[i];
+
+    if (shape1y[i] >= 600) {
+      shape1y[i] = 10;
+    } else if (shape1x >= 800) {
+      shape1x = 10;
+    }
+
   }
 
-}
 
-function youWin()
-{console.log(x); 
+ 
+}
+function getRandomNumber(number){
+
+  return random(number);
+}
+function youWin(){
   if (x > width && y > height - 50) {
     fill(255);
     stroke(10);
     textSize(50);
-    text("Winner!", width / 2 - 50, height / 2 - 50);
+    text("Winner", width / 2 - 50, height / 2 - 50);
   }
-
 }
