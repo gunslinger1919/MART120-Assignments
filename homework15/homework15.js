@@ -18,9 +18,12 @@ var shape2YSpeed = [];
 
 var mousex = 10;
 var mousey = 10;
-
+var circleObject; 
 function setup() {
   createCanvas(800, 600);
+  circleObject = new myCircle(100, 100, 100, 220, 120, 75);
+circleObject2 = new myCircle(300, 200, 200, 225, 33, 71);
+  circleObject3 = new myCircle(400,500,50,100,222,200);
   //random speeds
   for (var i = 0; i < 5; i++) {
     shape1XSpeed[i] = Math.floor(Math.random() * Math.floor(Math.random() * 5) + 1);
@@ -34,12 +37,16 @@ function setup() {
 
 function draw() {
   background(0);
-  fill(12, 30, 115);
-
+  
+  circleObject.display();
+circleObject2.display();
+circleObject3.display();
   //call create borders function
   createBorders(10);
 
   //call moving character function
+  
+  fill(12, 30, 115);
   createCharacter(x, y, diameter);
 
   // call character movement
@@ -77,6 +84,7 @@ function draw() {
 }
 
 function createBorders(thickness) {
+  fill (15, 75, 100);
   //top boreder
   rect(0, 0, width, thickness);
 
